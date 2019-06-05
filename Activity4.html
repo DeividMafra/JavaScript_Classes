@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <!-- Deivid Mafra - C0752173 -->
+</head>
+
+<body>
+    <!--    <p>Welcome to JavaScript</p> -->
+    <form>
+
+        <!-- <p>Please input a interger number > 0:</p> -->
+        <input id="number"><br><br>
+        <input type="button" value="Prime Numbers" onclick="primerNumber()" />
+        <input type="button" value="Ordering" onclick="AlphOrd()" />
+        <input type="button" value="Capitalization" onclick="UpperFirst()" />
+        <h1 id="primeNumber"></h1>
+        <h1 id="alphaOrder"></h1>
+        <h1 id="upFirst"></h1>
+    </form>
+    <script>
+        function primerNumber() {
+            num = document.getElementById("number").value;
+            if (isNaN(num) || num == "") {
+                answer = "It is not a number or it is empty!";
+            } else if (num == 1) {
+                answer = "Not primer!";
+            } else if (num == 2) {
+                answer = "Primer!";
+            } else {
+                for (x = 2; x < num; x++) {
+                    if (num % x == 0) {
+                        answer = "Not primer!";
+                        break;
+                    } else
+                        answer = "Primer!";
+                }
+            }
+            document.getElementById("primeNumber").innerHTML = answer;
+        }
+
+        function AlphOrd() {
+            num = document.getElementById("number").value;
+            newString = num.split("");
+            newString = newString.sort();
+            newString = newString.join('');
+            document.getElementById("primeNumber").innerHTML = newString;
+        }
+
+        function UpperFirst() {
+            num = document.getElementById("number").value;
+            newString = num.split(" ");
+            for (let i = 0; i < newString.length; i++) {
+                newString[i] = newString[i].charAt(0).toUpperCase() + newString[i].substring(1);
+            }
+            newString = newString.join(' ');
+            document.getElementById("primeNumber").innerHTML = newString;
+        }
+    </script>
+</body>
+
+</html>

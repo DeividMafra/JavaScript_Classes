@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <!-- Deivid Mafra - C0752173 -->
+</head>
+
+<body>
+    <form>
+        <p>Enter the number of columns: <input id="numOfCol"></p>
+
+        <input type="button" value="Add Row" onclick="AddingRow()" />
+        <input type="button" value="Delete Row" onclick="DeletingRow()" />
+        <table id="tableSelect">
+        </table>
+
+    </form>
+    <script>
+        function AddingRow() {
+            colQty = document.getElementById("numOfCol").value;
+            tableElement = document.getElementById("tableSelect");
+
+            numberOfRows = document.getElementById("tableSelect").rows.length;
+            //rows tr
+            if (numberOfRows < 10) {
+                newRow = tableElement.insertRow(0);
+
+                //columns td
+                for (let index = 1; index <= colQty; index++) {
+                    newCol = newRow.insertCell(0);
+                    newCol.innerHTML = " ";
+                }
+            } else
+                alert("The maximum of rows should be 10!");
+        }
+
+        function DeletingRow() {
+            numberOfRows = document.getElementById("tableSelect").rows.length;
+            if (numberOfRows > 0) {
+                document.getElementById("tableSelect").deleteRow(0);
+            } else
+                alert("There is no row to be deleted!");
+        }
+    </script>
+</body>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    tr,
+    td {
+        height: 50px;
+        border: 1px solid;
+    }
+</style>
+
+</html>

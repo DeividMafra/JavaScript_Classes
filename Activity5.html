@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <!-- Deivid Mafra - C0752173 -->
+</head>
+
+<body>
+    <form>
+        <p>1st number: <input id="number1"></p>
+        <p>2nd number: <input id="number2"></p><br>
+        <input type="button" value="Multiply" onclick="multiplication()" />
+        <input type="button" value="Divide" onclick="division()" />
+        <p id="result">The result is:</p>
+
+        <p>Please input a number between 1 and 10: </p> <input id="numberValidate">
+        <input type="button" value="Submit" onclick="nValidate()" /><br><br><br>
+
+        <p>Radius</p> <input id="radius">
+        <p>Volume</p> <input id="volume">
+        <input type="button" value="Calculate" onclick="calcRadius()" /><br><br><br>
+
+        <select id="colorSelect">
+            <option>Red</option>
+            <option>Green</option>
+            <option>White</option>
+            <option>Black</option>
+        </select>
+        <input type="button" onclick="removeColor()" value="Select and Remove">
+
+    </form>
+    <script>
+        function multiplication() {
+            num1 = document.getElementById("number1").value;
+            num2 = document.getElementById("number2").value;
+
+            var resultM = num1 * num2;
+
+            document.getElementById("result").innerHTML = "The result is: " + resultM;
+        }
+
+        function division() {
+            num1 = document.getElementById("number1").value;
+            num2 = document.getElementById("number2").value;
+
+            var resultD = num1 / num2;
+
+            document.getElementById("result").innerHTML = "The result is: " + resultD;
+        }
+
+        function nValidate() {
+            num = document.getElementById("numberValidate").value;
+            if (!isNaN(num) && num >= 1 && num <= 10) {
+                alert("It is a number between 1 and 10");
+            } else {
+                alert("It is not a number between 1 and 10");
+            }
+        }
+
+        function calcRadius() {
+            radius = document.getElementById("radius").value;
+            //alert(radius);
+            Volume = 4.19 * (Math.pow(radius, 3));
+            // volume = 4.19 x radius³;
+
+            document.getElementById("volume").value = Volume;
+            // document.querySelector("#volume").textContent = Volume;
+        }
+
+        function removeColor() {
+            colorElement = document.getElementById("colorSelect");
+            colorElement.options[colorElement.selectedIndex].remove();
+        }
+    </script>
+</body>
+
+</html>
