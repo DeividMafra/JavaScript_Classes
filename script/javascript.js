@@ -114,3 +114,39 @@ function DeletingRow() {
     } else
         alert("There is no row to be deleted!");
 }
+
+function AddingRow1() {
+    tableElement = document.getElementById("tableSelect");
+
+    if (!document.getElementById("tableSelect").rows[0]) {
+        newRow = tableElement.insertRow(0);
+        newCol = newRow.insertCell(0);
+    } else {
+        numRows = document.getElementById("tableSelect").rows[0].cells.length;
+        newRow = tableElement.insertRow(0);
+        for (let index = 0; index < numRows; index++) {
+
+            newCol = newRow.insertCell(0);
+        }
+    }
+}
+
+function AddingColumn1() {
+    tableElement = document.getElementById("tableSelect");
+
+
+    if (!document.getElementById("tableSelect").rows.length) {
+        newRow = tableElement.insertRow(0);
+    }
+
+    numberOfRows = document.getElementById("tableSelect").rows.length;
+
+    for (let index = 0; index < numberOfRows; index++) {
+        columnElement = document.getElementById("tableSelect").rows[index];
+        newCol = columnElement.insertCell(0);
+        newCol.innerHTML = " ";
+    }
+
+    numberOfCols = document.getElementById("colSelect").columns.lenght;
+    alert(numberOfCols);
+}
