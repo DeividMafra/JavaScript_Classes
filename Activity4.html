@@ -10,7 +10,7 @@
 
         <!-- <p>Please input a interger number > 0:</p> -->
         <input id="number"><br><br>
-        <input type="button" value="Prime Numbers" onclick="primerNumber()" />
+        <input type="button" value="Prime Numbers" onclick="primeNumber()" />
         <input type="button" value="Ordering" onclick="AlphOrd()" />
         <input type="button" value="Capitalization" onclick="UpperFirst()" />
         <h1 id="primeNumber"></h1>
@@ -18,21 +18,21 @@
         <h1 id="upFirst"></h1>
     </form>
     <script>
-        function primerNumber() {
+        function primeNumber() {
             num = document.getElementById("number").value;
             if (isNaN(num) || num == "") {
                 answer = "It is not a number or it is empty!";
             } else if (num == 1) {
-                answer = "Not primer!";
+                answer = "Not prime!";
             } else if (num == 2) {
-                answer = "Primer!";
+                answer = "Prime!";
             } else {
                 for (x = 2; x < num; x++) {
                     if (num % x == 0) {
-                        answer = "Not primer!";
+                        answer = "Not prime!";
                         break;
                     } else
-                        answer = "Primer!";
+                        answer = "Prime!";
                 }
             }
             document.getElementById("primeNumber").innerHTML = answer;

@@ -11,23 +11,23 @@ function Math() {
 }
 
 // console.log(primerNumber(37));
-function primerNumber() {
+function primeNumber() {
 
     var answer, x;
     num = document.getElementById("number").value;
     if (isNaN(num) || num == "") {
         answer = "It is not a number or it is empty";
     } else if (num == 1) {
-        answer = "Not primer";
+        answer = "Not prime";
     } else if (num == 2) {
-        answer = "Primer";
+        answer = "Prime";
     } else {
         for (x = 2; x < num; x++) {
             if (num % x == 0) {
-                answer = "Not primer!";
+                answer = "Not prime!";
                 break;
             } else
-                answer = "Primer!";
+                answer = "Prime!";
         }
     }
     document.getElementById("primeNumber").innerHTML = answer;
